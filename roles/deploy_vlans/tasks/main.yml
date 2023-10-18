@@ -1,5 +1,5 @@
 ---
-- name: 1 - Get Devices
+- name: 1 - Get Devices From Site
   uri:
       url: "{{ netbox_url }}api/dcim/devices/?name={{ inventory_hostname }}"
       method: GET
@@ -40,7 +40,7 @@
 #   ansible.builtin.debug:
 #     var: hostvars[inventory_hostname]
 
-- name: onfigure VLANs on Arista Switches
+- name: Configure VLANs on Arista Switches
   arista.eos.eos_vlans:
     config:
       - name: "{{ item.name }}"
