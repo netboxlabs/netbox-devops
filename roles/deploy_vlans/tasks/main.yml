@@ -40,7 +40,7 @@
 #   ansible.builtin.debug:
 #     var: hostvars[inventory_hostname]
 
-- name: Use vlans resource module
+- name: onfigure VLANs on Arista Switches
   arista.eos.eos_vlans:
     config:
       - name: "{{ item.name }}"
